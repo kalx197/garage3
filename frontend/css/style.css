@@ -1,0 +1,100 @@
+:root {
+    --bg-primary: #0f172a;
+    --bg-surface: #1e293b;
+    --accent: #3b82f6;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --success: #10b981;
+    --danger: #ef4444;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.dashboard-body {
+    display: block;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--bg-surface);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.auth-container {
+    background-color: var(--bg-surface);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    width: 100%;
+    max-width: 420px;
+}
+
+.input-group input, .input-group select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.25rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--text-muted);
+    color: white;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: filter 0.2s ease;
+}
+
+button:hover { filter: brightness(1.2); }
+.hidden { display: none !important; }
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+}
+
+.panel {
+    background-color: var(--bg-surface);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.wide-panel { grid-column: span 2; }
+@media (max-width: 900px) { .wide-panel { grid-column: span 1; } .dashboard-grid { grid-template-columns: 1fr; } }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--bg-primary);
+}
+
+th { background-color: rgba(0,0,0,0.2); color: var(--text-muted); }
+.status-available { color: var(--success); font-weight: bold; }
+.status-in-use { color: var(--danger); font-weight: bold; }
