@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventory Management Matrix</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-body">
+    <header>
+        <h1>Garage Core Node Dashboard</h1>
+        <div>
+            <span id="userBadge">User: Identity Unverified</span>
+            <button id="logoutBtn">Terminal Disconnect</button>
+        </div>
+    </header>
+
+    <main class="dashboard-grid">
+        <section id="adminPanel" class="panel hidden">
+            <h3>Add New Equipment Structure</h3>
+            <form id="addToolForm">
+                <input type="text" id="toolName" placeholder="Tool / Component Label" required>
+                <input type="text" id="toolCategory" placeholder="Category" required>
+                <input type="number" id="toolQty" placeholder="Total Stock Unit Counts" min="1" required>
+                <input type="text" id="toolBin" placeholder="Storage Allocation Matrix (Bin location)" required>
+                <button type="submit">Deploy Asset</button>
+            </form>
+        </section>
+
+        <section class="panel wide-panel">
+            <h3>Active Physical Inventory Register</h3>
+            <table id="inventoryTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nomenclature</th>
+                        <th>Category</th>
+                        <th>Availability State</th>
+                        <th>Available / Max Qty</th>
+                        <th>Location Vector</th>
+                        <th>Operational Interfacing</th>
+                    </tr>
+                </thead>
+                <tbody id="inventoryBody"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
