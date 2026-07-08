@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Garage Core Enterprise - Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="auth-container">
+        <h2>System Terminal Gateway</h2>
+        <div class="form-toggle">
+            <button id="toggleLoginBtn" class="active">Login</button>
+            <button id="toggleRegisterBtn">Register</button>
+        </div>
+        
+        <form id="authForm">
+            <div id="usernameGroup" class="input-group hidden">
+                <input type="text" id="username" placeholder="Username">
+            </div>
+            <div class="input-group">
+                <input type="email" id="email" placeholder="Email Address" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" placeholder="System Token Access Vector (Password)" required>
+            </div>
+            <div id="roleGroup" class="input-group hidden">
+                <select id="role">
+                    <option value="mechanic">Mechanic</option>
+                    <option value="admin">System Administrator</option>
+                </select>
+            </div>
+            <button type="submit" id="submitBtn">Authenticate</button>
+        </form>
+        <p id="authMessage" class="message"></p>
+    </div>
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
